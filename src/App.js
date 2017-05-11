@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { connect } from 'react-redux'
+
 import './App.css';
+import Leaf from './components/leaf'
+import Branch from './components/branch'
 
 class App extends Component {
   render() {
+    let randomNum = (min, max) => {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    let leaves = []
+    for(var i = 0; i < 400; i++){
+      leaves.push(<Leaf key={i} speed={randomNum(3, 15)} />)
+    }
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>{this.props.greetings}</h1>
+        {leaves}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return ({
+    greetings: state.greetings
+  })
+}
+
+const connectedApp = connect(mapStateToProps)(App)
+
+export default connectedApp;
