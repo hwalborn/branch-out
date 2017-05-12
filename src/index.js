@@ -9,10 +9,10 @@ import './index.css';
 
 let num, leaves = []
 
-if(document.documentElement.clientHeight > 800){
+if(document.documentElement.clientWidth > 800){
   num = 400
 }else{
-  num = 100
+  num = 50
 }
 
 for(var i = 0; i < num; i++){
