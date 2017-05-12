@@ -7,9 +7,15 @@ import manageState from './reducers'
 import App from './App';
 import './index.css';
 
-let leaves = []
+let num, leaves = []
 
-for(var i = 0; i < 400; i++){
+if(document.documentElement.clientHeight > 800){
+  num = 400
+}else{
+  num = 100
+}
+
+for(var i = 0; i < num; i++){
   leaves.push({
     id: i,
     speed: (Math.random() * (15 - 3)) + 3,
