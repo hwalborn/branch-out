@@ -1,8 +1,8 @@
-body {
+html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: aqua;
+  background: linear-gradient(to right, #1a1aff , #66FFFF);
 }
 
 @keyframes my-move{
@@ -16,7 +16,7 @@ body {
   background-color: green;
   height: 5em;
   width: 5em;
-  border-radius: 50px 0;
+  border-radius: 100px 0;
   position: relative;
   transform-origin: 100% 0%;
   display: inline-block;
